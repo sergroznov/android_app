@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/timeSelectBar"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/progressBarCircular"
+        android:stepSize="10"
+        android:value="0"
+        android:valueFrom="0"
+        android:valueTo="60"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/progressBarCircular"
+        app:layout_constraintBottom_toTopOf="@id/startStopButton"
+        android:layout_marginVertical="30dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCircular"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:indeterminateOnly="false"
+        android:max="60"
+        android:progressDrawable="@drawable/circle_progress"
+        android:rotation="-90"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Custom"
+        android:layout_below="@id/timeSelectBar"
+        android:text="Старт"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/progressBarCircular"
+        app:layout_constraintBottom_toBottomOf="@id/progressBarCircular"  />
+
+    <TextView
+        android:id="@+id/ApplicationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/progressBarCircular"
+        app:layout_constraintBottom_toTopOf="@id/timeSelectBar"
+        android:layout_marginVertical="30dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Custom"
+        android:text="Countdown Timer" />
+
+    <TextView
+        android:id="@+id/TimerCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/progressBarCircular"
+        app:layout_constraintRight_toRightOf="@id/progressBarCircular"
+        app:layout_constraintTop_toTopOf="@id/progressBarCircular"
+        app:layout_constraintBottom_toBottomOf="@id/progressBarCircular"
+        android:text="0"
+        android:textSize="100dp" />
+
+    <Button
+        android:id="@+id/changeThemeButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Custom"
+        android:text="Сменить тему"
+        app:layout_constraintBottom_toTopOf="@id/ApplicationName"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/progressBarCircular"
+        android:layout_marginVertical="30dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

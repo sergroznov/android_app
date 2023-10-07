@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/timeSelectBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/progressBarCircular"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="20dp"
+        android:stepSize="10"
+        android:value="0"
+        android:valueFrom="0"
+        android:valueTo="60" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCircular"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:indeterminateOnly="false"
+        android:max="60"
+        android:progressDrawable="@drawable/circle_progress"
+        android:rotation="-90" />
+
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Custom"
+        android:layout_below="@id/timeSelectBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Старт" />
+
+    <TextView
+        android:id="@+id/ApplicationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progressBarCircular"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-medium"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Custom"
+        android:layout_marginBottom="20dp"
+        android:text="Countdown Timer" />
+
+    <TextView
+        android:id="@+id/TimerCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="0"
+        android:textSize="100dp" />
+
+    <Button
+        android:id="@+id/changeThemeButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Custom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Сменить тему" />
+</RelativeLayout>
