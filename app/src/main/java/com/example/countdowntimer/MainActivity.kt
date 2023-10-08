@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         outState.putInt(KEY_COUNTER, counter)
         outState.putBoolean(KEY_IS_COUNTING, isCounting)
         outState.putLong(KEY_TIME_REMAINING, timeRemaining)
+        outState.putInt(PROGRESS_CIRCULAR, binding.progressBarCircular.progress)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
         counter = savedInstanceState.getInt(KEY_COUNTER, 0)
         isCounting = savedInstanceState.getBoolean(KEY_IS_COUNTING, false)
         timeRemaining = savedInstanceState.getLong(KEY_TIME_REMAINING, 0)
+        binding.progressBarCircular.progress = savedInstanceState.getInt(PROGRESS_CIRCULAR, binding.progressBarCircular.progress)
 
         if (isCounting) {
             startCountdown()
@@ -122,5 +124,6 @@ class MainActivity : AppCompatActivity() {
         private const val KEY_COUNTER = "counter"
         private const val KEY_IS_COUNTING = "is_counting"
         private const val KEY_TIME_REMAINING = "time_remaining"
+        private const val PROGRESS_CIRCULAR = "progress_circular"
     }
 }
